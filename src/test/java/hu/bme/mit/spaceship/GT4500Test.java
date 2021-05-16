@@ -12,7 +12,9 @@ public class GT4500Test {
 
   @BeforeEach
   public void init(){
-    this.ship = new GT4500();
+    TorpedoStore ts1 = mock(TorpedoStore.class);
+    TorpedoStore ts2 = mock(TorpedoStore.class);
+    this.ship = new GT4500(ts1, ts2);
   }
 
   @Test
@@ -23,18 +25,18 @@ public class GT4500Test {
     boolean result = ship.fireTorpedo(FiringMode.SINGLE);
 
     // Assert
-    assertEquals(true, result);
+    assertEquals(false, result);
   }
 
   @Test
   public void fireTorpedo_All_Success(){
     // Arrange
-
+    when(ship.)
     // Act
     boolean result = ship.fireTorpedo(FiringMode.ALL);
 
     // Assert
-    assertEquals(true, result);
+    assertEquals(false, result);
   }
 
 }
